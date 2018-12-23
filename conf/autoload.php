@@ -10,3 +10,6 @@ CORE\TOOL\Helper::loadDirFile(CONF_PATH);
 
 // 加载core目录所有核心文件
 CORE\TOOL\Helper::loadDirFile(CORE_PATH);
+
+// 加载app目录所有文件
+CORE\TOOL\Helper::loadDirFile(APP_PATH);

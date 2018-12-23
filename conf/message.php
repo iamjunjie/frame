@@ -7,7 +7,7 @@
  *      'outside' => '给用户看',
  * ]
  */
-$GLOBALS['error_message'] = [
+$GLOBALS['messages'] = [
     // 通用消息
     1000 => ['inside' => 'request code 200！', 'outside' => '请求成功！'],
     1001 => ['inside' => 'request code 500！', 'outside' => '网络异常！'],

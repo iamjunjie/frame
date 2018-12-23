@@ -17,7 +17,7 @@ class Message
      */
     public static function getMessage($code)
     {
-        $msgs = Arr::getVal($GLOBALS['error_message'], $code);
+        $msgs = Arr::getVal($GLOBALS['messages'], $code);
         return (IS_DEBUG ? $msgs['inside'] : $msgs['outside']);
     }
 }
