@@ -6,16 +6,13 @@ namespace CORE\ROUTE;
  */
 class Route
 {
-    
-
     /**
      * 构造函数
      */
     public function __construct()
     {
-        // 加载目录常量文件 dirconst.php
-        require_once CONF_PATH . DS . 'dirconst.php';
-        die(CONTROLLER_PAHT);
+        // 加载自动加载文件 conf/autoload.php
+        require_once CONF_PATH . 'autoload.php';
     }
 
     /**
@@ -23,7 +20,6 @@ class Route
      */
     public function dispatch()
     {
-        echo 'abc';
-        die;
+        die('dispatch success');
     }
 }
