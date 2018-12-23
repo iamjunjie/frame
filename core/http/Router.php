@@ -1,10 +1,10 @@
 <?php
-namespace CORE\ROUTE;
+namespace CORE\HTTP;
 
 /**
  * 路由入口
  */
-class Route
+class Router
 {
     /**
      * 路由调度

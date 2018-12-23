@@ -16,4 +16,4 @@ if (!defined('CONF_PATH')) {
 require_once CONF_PATH . 'autoload.php';
 
 // 路由调度
-CORE\ROUTE\Route::dispatch();
+CORE\HTTP\Router::dispatch();

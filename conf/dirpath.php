@@ -29,9 +29,9 @@ if (!defined('DATABASE_PATH')) {
     define('DATABASE_PATH', CORE_PATH . 'database' . DS);
 }
 
-// core/route 目录
-if (!defined('ROUTE_PATH')) {
-    define('ROUTE_PATH', CORE_PATH . 'route' . DS);
+// core/http 目录
+if (!defined('HTTP_PATH')) {
+    define('HTTP_PATH', CORE_PATH . 'http' . DS);
 }
 
 // core/tool 目录
