@@ -1,10 +1,10 @@
 <?php
 namespace CORE\TOOL;
 
-use CORE\TOOL\Helper;
+use CORE\TOOL\Arr;
 
 /**
- * 助手类
+ * 消息类
  */
 class Message
 {
@@ -17,7 +17,7 @@ class Message
      */
     public static function getMessage($code)
     {
-        $msgs = Helper::getArrVal($GLOBALS['error_message'], $code);
+        $msgs = Arr::getVal($GLOBALS['error_message'], $code);
         return (IS_DEBUG ? $msgs['inside'] : $msgs['outside']);
     }
 }

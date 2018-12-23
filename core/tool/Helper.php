@@ -16,11 +16,13 @@ class Helper
     public static function loadDirFile($dirpath)
     {
         $pathfiles = scandir($dirpath);
-        if(!empty($pathfiles)) {
+        if (!empty($pathfiles)) {
             foreach ($pathfiles as $key => $filename) {
-                if (!in_array($filename, ['.', '..'])) {
-                    self::loadFile($dirpath . $filename);
+                if (in_array($filename, ['.', '..'])) {
+                    continue;
                 }
+                $filename = trim($dirpath . $filename, DS);
+                is_dir($filename) ? self::loadDirFile($filename . DS) : self::loadFile($filename);         
             }
         }
     }
@@ -29,7 +31,6 @@ class Helper
      * 加载文件
      *
      * @param string $filepath 文件路径
-     * @return void
      */
     public static function loadFile($filepath)
     {
@@ -37,22 +38,5 @@ class Helper
             throw new \Exception(Message::getMessage(2000) . "【{$filepath}】");
         }
         require_once $filepath; 
-    }
-
-    /**
-     * 获取数组值
-     *
-     * @param array $arr 数组
-     * @param mixed $key 键名
-     * @param mixed $default 默认值
-     * @return mixed
-     */
-    public static function getArrVal($arr, $key, $default = null)
-    {
-        $val = $default;
-        if (isset($arr[$key])) {
-            $val = $arr[$key];
-        }
-        return $val;
     }
 }

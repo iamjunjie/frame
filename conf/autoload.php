@@ -8,5 +8,5 @@ require_once TOOL_PATH . 'Helper.php';
 // 加载配置文件
 CORE\TOOL\Helper::loadDirFile(CONF_PATH);
 
-// 加载所有工具文件
-CORE\TOOL\Helper::loadDirFile(TOOL_PATH);
+// 加载核心文件
+CORE\TOOL\Helper::loadDirFile(CORE_PATH);

@@ -12,9 +12,8 @@ if (!defined('CONF_PATH')) {
     define('CONF_PATH', ROOT_PATH . 'conf' . DS);
 }
 
-// 加载路由文件
-require_once ROOT_PATH  . 'core' . DS . 'route' . DS . 'Route.php';
+// 加载自动加载文件 conf/autoload.php
+require_once CONF_PATH . 'autoload.php';
 
 // 路由调度
-$router = new \CORE\ROUTE\Route();
-$router->dispatch();
+CORE\ROUTE\Route::dispatch();
