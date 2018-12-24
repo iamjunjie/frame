@@ -42,10 +42,17 @@ class Request
     public static function getControl()
     {
         $uri = trim(self::getRequestUri(), '/');
-        if (empty($uri)) {
+        if (!empty($uri)) {
+            $uri = parse_url($uri);
+            $uri = $uri['path'];
+        } else {
             $uri = Arr::getVal($GLOBALS, 'routes');
             $uri = Arr::getVal($uri, 'default');
         }
-        return explode('/', $uri);
+        $uri = explode('/', $uri);
+        return [
+            'controller' => $uri[0],
+            'method' => $uri[1],
+        ];
     }
 }
